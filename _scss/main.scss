@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,800&display=swap');
+
+$bg-color:    #001519;
+$title-color: #AAAEBC;
+$t1-color:    #FE53BB;
+$t2-color:    #F5D300;
+$t3-color:    #00d4FF;
+$t4-color:    #72FF00;
+
+@mixin skin ($color) {
+  button{
+    border: 3px solid darken($color, 0%);
+    color: darken($color, 0%);
+    background-color: darken($color, 40%);
+    &:hover{
+      border-color: lighten($color, 10%);
+      color: lighten($color, 10%);
+      background-color: darken($color, 30%);
+    }
+    &:focus{
+      border-color: lighten($color, 10%);
+      color: lighten($color, 10%);
+      background-color: darken($color, 30%);
+      padding:16px 16px;
+      outline: 0;
+      border-radius:12px;
+      &:first-of-type{
+        border-radius: 30px 12px 12px 30px;
+      }
+      &:last-of-type{
+        border-radius: 12px 30px 30px 12px;
+      }
+    }
+  }
+}
+
+.skin1 {
+  @include skin($t1-color);
+}
+.skin2 {
+  @include skin($t2-color);
+}
+.skin3 {
+  @include skin($t3-color);
+}
+.skin4 {
+  @include skin($t4-color);
+}
+
+* {
+  font-family: 'Muli', sans-serif;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+button{
+  outline: 0;
+}
+
+body {
+  background: $bg-color;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  justify-items: center;
+}
+
+.group-container{
+  height: 100px;
+  display: grid;
+  place-items: center;
+  justify-items: center;
+}
+
+.multi-button{
+  font-size:0;
+}
+
+button{  
+  font-weight: 800;
+  background: transparent;
+  min-width:100px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 15px;
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 0 3px 0 0;
+  cursor:pointer;
+  transition-duration:0.1s;
+  transition-timing-function: ease-in-out;
+  &:first-of-type{
+    border-radius: 20px 8px 8px 20px;
+  }
+  &:last-of-type{
+    border-radius: 8px 20px 20px 8px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  button{
+    min-width: 80px;
+  }
+}
