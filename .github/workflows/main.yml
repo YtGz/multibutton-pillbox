@@ -52,7 +52,7 @@ jobs:
         with:
           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
           head: pr-pages
-          base: gh-pages
+          base: main
           title: 'Updates site files from latest Actions build'
           body: >
             Perhaps a multi-line description
