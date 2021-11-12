@@ -8,7 +8,7 @@ $t3-color:    #00d4FF;
 $t4-color:    #72FF00;
 
 @mixin skin ($color) {
-  button{
+  button.multi-button{
     border: 3px solid darken($color, 0%);
     color: darken($color, 0%);
     background-color: darken($color, 40%);
@@ -51,20 +51,11 @@ $t4-color:    #72FF00;
   font-family: 'Muli', sans-serif;
 }
 
-button::-moz-focus-inner {
+button.multi-button::-moz-focus-inner {
   border: 0;
 }
-button{
+button.multi-button{
   outline: 0;
-}
-
-body {
-  background: $bg-color;
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  place-items: center;
-  justify-items: center;
 }
 
 .group-container{
@@ -74,11 +65,11 @@ body {
   justify-items: center;
 }
 
-.multi-button{
+.multi-button-div{
   font-size:0;
 }
 
-button{  
+button.multi-button{  
   font-weight: 800;
   background: transparent;
   min-width:100px;
@@ -100,7 +91,7 @@ button{
 }
 
 @media only screen and (max-width: 767px) {
-  button{
+  button.multi-button{
     min-width: 80px;
   }
 }
